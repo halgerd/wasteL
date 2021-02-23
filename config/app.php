@@ -2,6 +2,11 @@
 
 return [
 
+    'source_uri' => env('SOURCE_URL', 'https://api.openbrewerydb.org/'),
+    'pagination' => [
+        'limit' => env('PAGINATION_LIMIT', 5)
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -173,6 +178,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
+        App\Providers\HttpClientServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
     ],
